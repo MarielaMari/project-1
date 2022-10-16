@@ -22,17 +22,79 @@ console.log ('\n');
 //TODO: need to use getRandomFromSet command to randomize themovie title choices
 
 
-const movieTitles = [
-   {tite:'Speed', genre:'Action, Adventure, Crime', year:'1994', director:'Jan De Bont', stars:'Sandra Bullock, Keanu Reeves', soundtrack:'', quote:'', didYouKnow:''},
-   {tite:'The Devil\'s Advocate', genre:'Drama, Mystery, Thriller', year:'1997', director:'Tylor Hackford', stars:'Al Pacino, Keanu Reeves', soundtrack:'', quote:'', didYouKnow:''},
-   {tite:'Twilight', genre:'Drama, Fantasy, Romance', year:'2008', director:'Catherine Hardwicke', stars:'Kristen Sewart, Robert Pattinson', soundtrack:'', quote:'', didYouKnow:''},
-   {tite:'Scarface', genre:'Crime, Drama', year:'1983', director:'Brian De Palma', stars:'Al Pacino, Michelle Pfeiffer', soundtrack:'', quote:'', didYouKnow:''},
-   {tite:'Frozen', genre:'Animation, Adventure, Comedy', year:'2013', director:'Chris Buck, Jennifer Lee', stars:'Kristen Bell (voice), Ididna Menzel (voice)', soundtrack:'', quote:'', didYouKnow:''},
-   {tite:'Titanic', genre:'Drama, Romance', year:'1997', director:'James Cameron', stars:'Kate Winslet, Leonardo DiCaprio', soundtrack:'', quote:'', didYouKnow:''},
-   {tite:'Salt', genre:'Action, Thriller', year:'2010', director:'Phillip Noyce', stars:'Angelina Jolie', soundtrack:'', quote:'', didYouKnow:''}
-]
 
-//TODO: the array objects were working; need to investigate the Eneter First
+const movieChoices = [
+  {
+    tite: 'Speed',
+    genre: 'Action, Adventure, Crime',
+    year: '1994',
+    director: 'Jan De Bont',
+    stars: 'Sandra Bullock, Keanu Reeves',
+    soundtrack: '',
+    quote: '',
+    didYouKnow: '',
+  },
+  {
+    tite: "The Devil's Advocate",
+    genre: 'Drama, Mystery, Thriller',
+    year: '1997',
+    director: 'Tylor Hackford',
+    stars: 'Al Pacino, Keanu Reeves',
+    soundtrack: '',
+    quote: '',
+    didYouKnow: '',
+  },
+  {
+    tite: 'Twilight',
+    genre: 'Drama, Fantasy, Romance',
+    year: '2008',
+    director: 'Catherine Hardwicke',
+    stars: 'Kristen Sewart, Robert Pattinson',
+    soundtrack: '',
+    quote: '',
+    didYouKnow: '',
+  },
+  {
+    tite: 'Scarface',
+    genre: 'Crime, Drama',
+    year: '1983',
+    director: 'Brian De Palma',
+    stars: 'Al Pacino, Michelle Pfeiffer',
+    soundtrack: '',
+    quote: '',
+    didYouKnow: '',
+  },
+  {
+    tite: 'Frozen',
+    genre: 'Animation, Adventure, Comedy',
+    year: '2013',
+    director: 'Chris Buck, Jennifer Lee',
+    stars: 'Kristen Bell (voice), Ididna Menzel (voice)',
+    soundtrack: '',
+    quote: '',
+    didYouKnow: '',
+  },
+  {
+    tite: 'Titanic',
+    genre: 'Drama, Romance',
+    year: '1997',
+    director: 'James Cameron',
+    stars: 'Kate Winslet, Leonardo DiCaprio',
+    soundtrack: '',
+    quote: '',
+    didYouKnow: '',
+  },
+  {
+    tite: 'Salt',
+    genre: 'Action, Thriller',
+    year: '2010',
+    director: 'Phillip Noyce',
+    stars: 'Angelina Jolie',
+    soundtrack: '',
+    quote: '',
+    didYouKnow: '',
+  },
+];
 
 console.log ('\n');
 import rl1 from 'readline-sync';
