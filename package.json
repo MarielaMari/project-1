@@ -1,0 +1,23 @@
+{
+  "name": "project-1",
+  "version": "0.1.0",
+  "description": "Guess the Movie Title Terminal Game (js)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarielaMari/project-1.git"
+  },
+  "author": "Mariela Mihilova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarielaMari/project-1/issues"
+  },
+  "homepage": "https://github.com/MarielaMari/project-1#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
