@@ -31,18 +31,6 @@ console.log (`\n Hello ${player}! Have fun.\n`);
 
 //movieChoices.forEach((item) => console.log(item));
 
-function getRandomMovie (movieChoices) {
-  const length = movieChoices.length;
-
-  const randomIndex = Math.floor (Math.random () * length);
-  return movieChoices[randomIndex];
-}
-
-const randomMovie = getRandomMovie ();
-console.log (
-  `\n Here is your first movie hint, genre is: ${randomMovie.genre}`
-);
-
 let movieChoices = [
   {
     id: '001',
@@ -122,6 +110,16 @@ let movieChoices = [
     didYouKnow: '',
   },
 ];
+
+function getRandomMovie (movieChoices) {
+  const length = movieChoices.length;
+  const randomIndex = Math.floor (Math.random () * length);
+  return movieChoices[randomIndex];
+}
+const randomMovie = getRandomMovie (movieChoices);
+console.log (
+  `\n Here is your first movie hint, genre is: ${randomMovie.genre}`
+);
 
 console.log ('\n');
 const playerFirstGuess = rl.question ('Enter your first guess: ');
