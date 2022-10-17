@@ -1,31 +1,52 @@
-console.log ('\n Welcome to "Guess the One Word Movie Title" ');
+//START GAME
 
-console.log ('\n');
+//TODO: to create separate welcomeMessage.js file
+function welcomeMessage () {
+  console.log ('\n Welcome to "Guess the One Word Movie Title" ');
+}
+welcomeMessage ();
+
+//TODO: to create separate gameRules.js file
+function gameRules () {
+  console.log (
+    ` \n
+    GAME RULES:
+   1. Use small letters only. // TODO: Check, it might not be case sensitive!
+   2. After the information about the movie is displayied,
+      you have three tries to guess the name of the movie.
+   3. If you have not guessed the movie, after your tird try
+      you will have a choice to play again, exit or start a new game.
+      
+      POINTS: You win one point every time when you guess a movie.\n`
+  );
+}
+gameRules ();
+
+import rl from 'readline-sync';
+const player = rl.question ('\n What is your name? ');
+console.log (`\n Hello ${player}! Have fun.\n`);
+
+//TODO: fix the radom function
+////TODO: to create separate getRandomMovie.js file
+
+//movieChoices.forEach((item) => console.log(item));
+
+function getRandomMovie (movieChoices) {
+  const length = movieChoices.length;
+
+  const randomIndex = Math.floor (Math.random () * length);
+  return movieChoices[randomIndex];
+}
+
+const randomMovie = getRandomMovie ();
 console.log (
-  ` GAME RULES:
-  1. Use small letters only. // TODO: Check, it might not be case sensitive!
-  2. After the information about the movie is displayied,
-     you have three tries to guess the name of the movie.
-  3. If you have not guessed the movie, after your tird try
-     you will have a choice to play again, exit or start a new game.
-     
-     POINTS: You win one point every time when you guess a movie.`
+  `\n Here is your first movie hint, genre is: ${randomMovie.genre}`
 );
 
-console.log ('\n');
-import rl from 'readline-sync';
-const player = rl.question ('What is your name? ');
-console.log (`Hello ${player}! Have fun. `);
-
-console.log ('\n');
-//TODO: decide on info from objects for each movie vs displaying dashes for the name of the movie
-//TODO: need to use getRandomFromSet command to randomize themovie title choices
-
-
-
-const movieChoices = [
+let movieChoices = [
   {
-    tite: 'Speed',
+    id: '001',
+    title: 'Speed',
     genre: 'Action, Adventure, Crime',
     year: '1994',
     director: 'Jan De Bont',
@@ -35,7 +56,8 @@ const movieChoices = [
     didYouKnow: '',
   },
   {
-    tite: "The Devil's Advocate",
+    id: '002',
+    title: "The Devil's Advocate",
     genre: 'Drama, Mystery, Thriller',
     year: '1997',
     director: 'Tylor Hackford',
@@ -45,7 +67,8 @@ const movieChoices = [
     didYouKnow: '',
   },
   {
-    tite: 'Twilight',
+    id: '003',
+    title: 'Twilight',
     genre: 'Drama, Fantasy, Romance',
     year: '2008',
     director: 'Catherine Hardwicke',
@@ -55,7 +78,8 @@ const movieChoices = [
     didYouKnow: '',
   },
   {
-    tite: 'Scarface',
+    id: '004',
+    title: 'Scarface',
     genre: 'Crime, Drama',
     year: '1983',
     director: 'Brian De Palma',
@@ -65,7 +89,8 @@ const movieChoices = [
     didYouKnow: '',
   },
   {
-    tite: 'Frozen',
+    id: '005',
+    title: 'Frozen',
     genre: 'Animation, Adventure, Comedy',
     year: '2013',
     director: 'Chris Buck, Jennifer Lee',
@@ -75,7 +100,8 @@ const movieChoices = [
     didYouKnow: '',
   },
   {
-    tite: 'Titanic',
+    id: '006',
+    title: 'Titanic',
     genre: 'Drama, Romance',
     year: '1997',
     director: 'James Cameron',
@@ -85,7 +111,8 @@ const movieChoices = [
     didYouKnow: '',
   },
   {
-    tite: 'Salt',
+    id: '007',
+    title: 'Salt',
     genre: 'Action, Thriller',
     year: '2010',
     director: 'Phillip Noyce',
@@ -97,20 +124,17 @@ const movieChoices = [
 ];
 
 console.log ('\n');
-import rl1 from 'readline-sync';
-const playerFirstGuess = rl1.question ('Enter your first guess: ');
+const playerFirstGuess = rl.question ('Enter your first guess: ');
 
 //TODO: Use setTimeOut, 3000
 
 console.log ('\n');
-import rl2 from 'readline-sync';
-const playerSecondGuess = rl2.question ('Enter your second guess: ');
+const playerSecondGuess = rl.question ('Enter your second guess: ');
 
 //TODO: Use setTimeOut, 3000
 
 console.log ('\n');
-import rl3 from 'readline-sync';
-const playerThirdGuess = rl3.question ('Enter your third guess: ');
+const playerThirdGuess = rl.question ('Enter your third guess: ');
 
 //TODO: Use setTimeOut, 3000 Would you like to play again, exit the game or play a new game?
 
@@ -123,3 +147,4 @@ console.log (`Good bye, ${player}! Thank you for playing.`);
 
 //Movie titles to use in an array/database:
 //Silence of the Lambs, Slumdog Millionaire, Friends, Dirty Dancing, Twilight, The Devil's Advocate,
+//END
