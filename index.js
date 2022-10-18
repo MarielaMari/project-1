@@ -11,7 +11,7 @@ console.log (`\n Hello ${player}! Have fun.\n`);
 let movieChoices = [
   {
     id: '001',
-    title: 'Speed',
+    title: 'speed',
     genre: 'Action, Adventure, Crime',
     year: '1994',
     director: 'Jan De Bont',
@@ -22,7 +22,7 @@ let movieChoices = [
   },
   {
     id: '002',
-    title: 'Twilight',
+    title: 'twilight',
     genre: 'Drama, Fantasy, Romance',
     year: '2008',
     director: 'Catherine Hardwicke',
@@ -33,7 +33,7 @@ let movieChoices = [
   },
   {
     id: '003',
-    title: 'Scarface',
+    title: 'scarface',
     genre: 'Crime, Drama',
     year: '1983',
     director: 'Brian De Palma',
@@ -44,7 +44,7 @@ let movieChoices = [
   },
   {
     id: '004',
-    title: 'Frozen',
+    title: 'frozen',
     genre: 'Animation, Adventure, Comedy',
     year: '2013',
     director: 'Chris Buck, Jennifer Lee',
@@ -55,7 +55,7 @@ let movieChoices = [
   },
   {
     id: '005',
-    title: 'Titanic',
+    title: 'titanic',
     genre: 'Drama, Romance',
     year: '1997',
     director: 'James Cameron',
@@ -66,7 +66,7 @@ let movieChoices = [
   },
   {
     id: '006',
-    title: 'Salt',
+    title: 'salt',
     genre: 'Action, Thriller',
     year: '2010',
     director: 'Phillip Noyce',
@@ -76,7 +76,8 @@ let movieChoices = [
     didYouKnow: '',
   },
 ];
-export function getRandomMovie (movieChoices) {
+
+function getRandomMovie (movieChoices) {
   const length = movieChoices.length;
   const randomIndex = Math.floor (Math.random () * length);
   return movieChoices[randomIndex];
@@ -86,22 +87,25 @@ function playGame () {
   const randomMovie = getRandomMovie (movieChoices);
   console.log (
     `\n Here is the hint:
-      Genre: "${randomMovie.genre}
+      Genre: "${randomMovie.genre}"
       Year: ${randomMovie.year}
       Director: ${randomMovie.director}
-      Stars: ${randomMovie.stars}"`
+      Stars: ${randomMovie.stars}`
   );
 
- 
-  console.log ('\n');
-  const playersGuess = rl.question ('Enter your guess: ');
-
-  console.log ('\n');
-  console.log (`Good bye ${player}! \nThank you for playing.`);
+  console.log ();
+  const playersGuess = rl.question ('Which movie is this? Enter your guess: ');
+  console.log ();
 
   if (playersGuess === randomMovie.title) {
     console.log ('Good job!');
     playGame ();
+  } else {
+    console.log ();
+    console.log ('sorry, wrong answer');
+    console.log ();
+    console.log ();
+    console.log (`Good bye ${player}!`);
   }
 }
 
