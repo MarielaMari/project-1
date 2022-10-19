@@ -4,11 +4,16 @@ import {welcomeMessage} from './welcomeMessage.js';
 import {gameRules} from './gameRules.js';
 
 import rl from 'readline-sync';
-//import {getRandomMovie, movieChoices} from './getRandomMovie';
-const player = rl.question ('\n What is your name? ');
-console.log (`\n Hello ${player}! Have fun.\n`);
+import {getRandomMovie} from './getRandomMovie.js';
 
-let movieChoices = [
+console.log();
+
+const player = rl.question ('What is your name? ');
+console.log ();
+console.log (`Hello ${player}! Have fun.`);
+console.log ();
+
+export let movieChoices = [
   {
     id: '001',
     title: 'speed',
@@ -77,16 +82,10 @@ let movieChoices = [
   },
 ];
 
-function getRandomMovie (movieChoices) {
-  const length = movieChoices.length;
-  const randomIndex = Math.floor (Math.random () * length);
-  return movieChoices[randomIndex];
-}
-
 function playGame () {
   const randomMovie = getRandomMovie (movieChoices);
   console.log (
-    `\n Here is the hint:
+    ` Here is the hint:
       Genre: "${randomMovie.genre}"
       Year: ${randomMovie.year}
       Director: ${randomMovie.director}
@@ -94,21 +93,40 @@ function playGame () {
   );
 
   console.log ();
+
   const playersGuess = rl.question ('Which movie is this? Enter your guess: ');
   console.log ();
 
   if (playersGuess === randomMovie.title) {
     console.log ('Good job!');
-    playGame ();
+
+    console.log ();
+    const playersNewExit = rl.question ('Would you like to play again? y/n: ');
+    console.log ();
+
+    if (playersNewExit === 'y') {
+      playGame ();
+    } else {
+      console.log (`Thank you for playing! Good buy ${player}`);
+    }
   } else {
     console.log ();
-    console.log ('sorry, wrong answer');
+    console.log (
+      `Sorry, wrong answer. The correct answer is "${randomMovie.title}"`
+    );
+
     console.log ();
+    const playersNewExit = rl.question ('Would you like to play again? y/n: ');
     console.log ();
-    console.log (`Good bye ${player}!`);
+
+    if (playersNewExit === 'y') {
+      playGame ();
+    } else {
+      console.log (`Thank you for playing! Good buy ${player}`);
+    }
   }
 }
 
-//END GAME
+//END OF GAME
 
 playGame ();
